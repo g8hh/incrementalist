@@ -17,7 +17,7 @@ function confirmEnterPPChallenge(c) {
   let inAnyChallenge = false;
   for (let i=1; i<ppChallenge.length; i++) {if (user.pp.challenge[i].in) {inAnyChallenge = true}}
   if (inAnyChallenge) {return}
-  if (user.options.confirmations.includes("Challenge")) {alertify.confirm("Are you sure you want to begin this challenge?", () => {enterPPChallenge(c)})}
+  if (user.options.confirmations.includes("Challenge")) {alertify.confirm("您确定要开始这个挑战吗？", () => {enterPPChallenge(c)})}
   else {enterPPChallenge(c)}
 }
 function enterPPChallenge(c) {
@@ -32,7 +32,7 @@ function enterPPChallenge(c) {
 function confirmExitPPChallenge() {
   let c = 0;
   for (let i=1; i<ppChallenge.length; i++) {if (user.pp.challenge[i].in) {c = i}}
-  (user.ip.sac.lt(getPPChallengeGoal(c))) ? alertify.confirm("Are you sure you want to exit the challenge? You will not complete the challenge", () => {exitPPChallenge(c)}) : exitPPChallenge(c);
+  (user.ip.sac.lt(getPPChallengeGoal(c))) ? alertify.confirm("您确定要退出挑战吗？ 你不会完成挑战", () => {exitPPChallenge(c)}) : exitPPChallenge(c);
 }
 function exitPPChallenge(c) {
   let completions = 0;

@@ -25,7 +25,7 @@ for (let layer in sacrifice) {
 
 //Buttons
 function confirmRunSacrifice(layer) {
-  if (user.options.confirmations.includes("Sacrifice")) {alertify.confirm("Are you sure you want to sacrifice?", () => {runSacrifice(layer)})}
+  if (user.options.confirmations.includes("Sacrifice")) {alertify.confirm("你确定要牺牲？", () => {runSacrifice(layer)})}
   else {runSacrifice(layer)}
 }
 function runSacrifice(layer, dontConfirm, bypassExploitFix) {
@@ -38,7 +38,7 @@ function runSacrifice(layer, dontConfirm, bypassExploitFix) {
   else if (!dontConfirm) {
     setTimeout(() => {
       if (/*user.options.confirmations.includes("Sacrifice") || layer == "PP"*/user[layer.toLowerCase()].total.lt(sacrifice[layer].goal)) {
-        alertify.confirm("You will not earn any bonus. Do you want to continue?", () => {
+        alertify.confirm("您将不会获得任何奖金。 你要继续吗？", () => {
           reset.push("Sacrifice"+layer);
         });
       }

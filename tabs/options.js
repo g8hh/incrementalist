@@ -61,7 +61,7 @@ function save(notify) {
 }
 function exporty() {copyToClipboard(encode(JSON.parse(localStorage.getItem("user"))))}
 function importy() {
-  alertify.prompt("Paste your save code here", "", (event, value) => {
+  alertify.prompt("在这里粘贴你的存档", "", (event, value) => {
     if (value === "42") {giveAchievement("ach4-2", true)}
     else {
       /*let data = JSON.parse(atob(value));*/
@@ -78,7 +78,7 @@ function importy() {
   });
 }
 function confirmResetAll() {
-  alertify.confirm("Are you sure you want to reset? You will lose all of your progress", () => {resetAll(true)});
+  alertify.confirm("您确定要重置吗？ 你将失去所有的进步", () => {resetAll(true)});
 }
 function resetAll(notify) {
   loadData(setUser());
