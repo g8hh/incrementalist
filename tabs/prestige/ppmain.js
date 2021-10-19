@@ -3,7 +3,7 @@ di("prestige").addEventListener("click", () => {confirmPrestige(); lastClicked =
 
 //Buttons
 function confirmPrestige() {
-  if (user.options.confirmations.includes("Prestige")) {alertify.confirm("Are you sure you want to prestige?", () => {runPrestige(true, true)})}
+  if (user.options.confirmations.includes("Prestige")) {alertify.confirm("你确定要声望吗？", () => {runPrestige(true, true)})}
   else {runPrestige(true, true)}
 }
 function runPrestige(achCheck, warn) {
@@ -24,7 +24,7 @@ function runPrestige(achCheck, warn) {
   else if (warn) {
     setTimeout(() => {
       if (user.options.confirmations.includes("Prestige")) {
-        alertify.confirm("You will not earn any PP. Do you want to continue?", () => {
+        alertify.confirm("您将不会获得任何 PP。 你要继续吗？", () => {
           user.pp.lastGain = nd(0);
           if (user.pp.pt.refund) {refundPT()}
           reset.push("Prestige");

@@ -67,7 +67,7 @@ function copyToClipboard(str) {
   document.body.appendChild(el);
   copyToClipboard2(el);
   document.body.removeChild(el);
-  alert("Copied to clipboard");
+  alert("已复制到剪切板");
 }
 function copyToClipboard2(el) {
   el = (typeof el === "string") ? document.querySelector(el) : el;
