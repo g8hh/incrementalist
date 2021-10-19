@@ -7,7 +7,8 @@ body {
   user-select: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   cursor: default;
   font-size: 18px;
 }
@@ -34,11 +35,11 @@ input {
 }
 
 /* Position */
-.ch {position: absolute; left: 50%; transform: translateX(-50%)}
+.ch {position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%)}
 .ch2 {text-align: center}
-.cv {position: absolute; top: 50%; transform: translateY(-50%)}
-.chv {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)}
-.cvh {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)}
+.cv {position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%)}
+.chv {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%)}
+.cvh {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%)}
 
 /* Text */
 /*.text {color: rgb(150, 150, 150); font-family: "Georgia"; overflow-wrap: break-word}*/
@@ -58,6 +59,8 @@ input {
   color: rgb(100, 100, 255);
   font-weight: bold;
   cursor: pointer;
+  -webkit-transition: font-size .5s;
+  -o-transition: font-size .5s;
   transition: font-size .5s;
 }
 .infoText:hover {
@@ -72,7 +75,9 @@ input {
   text-align: center;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .eggDisplayId {
   color: rgba(111, 111, 0, 0.25);
@@ -83,7 +88,9 @@ input {
   text-align: center;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .ptDisplayId {
   color: rgb(10, 10, 50);
@@ -94,7 +101,9 @@ input {
   text-align: center;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .ppChallengeDisplayId {
   color: rgb(20, 20, 50);
@@ -105,7 +114,9 @@ input {
   text-align: center;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 /* General Display */
@@ -115,6 +126,8 @@ input {
   border-radius: 25px;
   cursor: pointer;
   outline: none;
+  -webkit-transition: color .2s, font-weight .2s, background-color .2s;
+  -o-transition: color .2s, font-weight .2s, background-color .2s;
   transition: color .2s, font-weight .2s, background-color .2s;
 }
 .tab:hover {color: rgb(200, 200, 200); font-weight: bold; background-color: rgb(0, 0, 0)}
@@ -145,17 +158,35 @@ input {
   display: none;
   z-index: 1;
 }
-.dropdown-item {border: 2px solid rgb(35, 140, 35); margin: 1px; transition: background-color .2s}
+.dropdown-item {border: 2px solid rgb(35, 140, 35); margin: 1px; -webkit-transition: background-color .2s; -o-transition: background-color .2s; transition: background-color .2s}
 .dropdown-item:hover {background-color: rgb(50, 50, 50)}
 .table {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column wrap;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
 }
 .tableRow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
 }
 
 /* Buttons */
@@ -195,7 +226,9 @@ input {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 #refundPT {
   border: 2px solid rgb(50, 50, 250);
@@ -219,12 +252,20 @@ input {
 .canBuy {
   background-color: rgb(0, 0, 0);
   cursor: pointer;
+  -webkit-transition: background-color .2s;
+  -o-transition: background-color .2s;
   transition: background-color .2s;
 }
 .cantBuy {
   background-color: rgb(35, 35, 35);
   cursor: default;
+  -webkit-transition: background-color .2s;
+  -o-transition: background-color .2s;
   transition: background-color .2s;
+/*
+    height: auto !important;
+    min-height: 90px;
+*/
 }
 .achievement {
   background-color: rgb(25, 25, 25);
@@ -252,6 +293,8 @@ input {
 .ppComplete {
   background-color: rgb(25, 25, 85);
   outline: none;
+  -webkit-transition: background-color .2s;
+  -o-transition: background-color .2s;
   transition: background-color .2s;
 }
 .ppCellEmpty {
@@ -273,6 +316,8 @@ input {
   z-index: 1;
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
   transition: opacity .5s;
 }
 .tooltip-content::after {
@@ -329,7 +374,9 @@ input {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 10;
 }
 #loadingScreen {
@@ -341,6 +388,8 @@ input {
   width: 100%;
   z-index: 10;
   opacity: 1;
+  -webkit-transition: opacity .75s;
+  -o-transition: opacity .75s;
   transition: opacity .75s;
 }
 #offlineBox {
@@ -354,7 +403,9 @@ input {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .close {
   color: rgb(150, 150, 150);
@@ -365,6 +416,8 @@ input {
   cursor: pointer;
   text-align: center;
   font-size: 22px;
+  -webkit-transition: color .2s, background-color .2s;
+  -o-transition: color .2s, background-color .2s;
   transition: color .2s, background-color .2s;
 }
 .close:hover {color: rgb(0, 0, 0); background-color: rgb(35, 140, 35)}
